@@ -1,0 +1,43 @@
+import React from 'react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import Demo from './Demo';
+
+describe('Demo', () => {
+  it('Renders start button', () => {
+    render(<Demo />);
+    const startElement = screen.getByText(/start/i);
+    expect(startElement).toBeInTheDocument();
+  });
+
+  it('Renders the end button once start has been clicked', () => {
+    render(<Demo />);
+    fireEvent(
+      screen.getByText('Start'),
+      new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true,
+      }),
+    );
+    const endButton = screen.getByText(/end/i);
+    expect(endButton).toBeInTheDocument();
+  });
+
+  it('Renders a non-zero progress when Start and End have been clicked', () => {
+    const { container } = render(<Demo />);
+    fireEvent(
+      screen.getByText('Start'),
+      new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true,
+      }),
+    );
+    fireEvent(
+      screen.getByText('End'),
+      new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true,
+      }),
+    );
+    expect(container.getElementsByClassName('percentage-value')[0].innerHTML).not.toBe('0');
+  });
+});

@@ -1,0 +1,19 @@
+.progress-bar {
+  stroke: #479ef2;
+}
+
+.progress-circle {
+  stroke: #e9e9e9;
+}
+
+.percentage {
+  font-family: sans-serif;
+  fill: #333;
+  font-size: 88px;
+}
+
+.percentage-sup {
+  fill: #c3c3c3;
+  font-size: 32px;
+  font-weight: bold;
+}
