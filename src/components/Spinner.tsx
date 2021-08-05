@@ -9,6 +9,7 @@ type Props = {
   radius?: number,
   strokeWidth?: number,
   progressStyles?: CSSProperties,
+  rotationFactor?: number,
 };
 
 const Spinner: FC<Props> = (props: Props): ReactElement => {
@@ -18,6 +19,7 @@ const Spinner: FC<Props> = (props: Props): ReactElement => {
     size = '100%',
     strokeWidth = 25,
     progressStyles = {},
+    rotationFactor = 1,
   } = props;
 
   const radius = 175;
@@ -28,6 +30,8 @@ const Spinner: FC<Props> = (props: Props): ReactElement => {
     strokeDashoffset: getOffset(progress, diameter),
     transition: `stroke-dashoffset ${animationDuration}s ease-out`,
   };
+
+  const validPercentage = getValidPercentage(progress);
 
   return (
     <svg width={size} height={size} viewBox='-25 -25 400 400'>
@@ -43,6 +47,7 @@ const Spinner: FC<Props> = (props: Props): ReactElement => {
         cx={radius}
         cy={radius}
         r={radius}
+        transform={`rotate(${validPercentage * rotationFactor} ${radius} ${radius})`}
         strokeWidth={strokeWidth}
         strokeDasharray='1100'
         strokeDashoffset='1100'
@@ -57,7 +62,7 @@ const Spinner: FC<Props> = (props: Props): ReactElement => {
         textAnchor='middle'
         dominantBaseline='central'
       >
-        <tspan className='percentage-value'>{getValidPercentage(progress)}</tspan>
+        <tspan className='percentage-value'>{validPercentage}</tspan>
         <tspan dx={6} dy={-14} className='percentage-sup'>%</tspan>
       </text>
     </svg>

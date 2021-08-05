@@ -58,7 +58,7 @@ const Demo: FC = (): ReactElement => {
 
   return (
     <div className='demo' style={styles}>
-      <Spinner progress={progress} animationDuration={0.75} />
+      <Spinner progress={progress} animationDuration={0.75} rotationFactor={10} />
       {!isSpinning
         && <button onClick={handleStartSpinning}>Start</button>}
       {isSpinning
