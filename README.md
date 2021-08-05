@@ -24,7 +24,7 @@ npm text
 
 ## About
 ### Spinner
-I used SVG to create the overlapping circles, the top being the progress bar that uses `stroke-dashoffset` to increase in size relative to the progress. Progress is an integer between 0 and 100, and is checked within the `Spinner` component to fall within that range, and is rounded if it is not an integer.
+I used SVG to create the overlapping circles, the top being the progress bar that uses `stroke-dashoffset` to increase in size relative to the progress. Progress is an integer between 0 and 100, and is checked within the `Spinner` component to fall within that range, and is rounded if it is not an integer. The progress-bar circle will animate to the next value it receives, as well as rotate when the `rotate` prop is true. For the rotation, I had experimented with other methods specific to SVG, such updating the value in the `transform` attribute of the circle to cause rotation, or using the `animationTransition` element. These were both limiting in various ways, and CSS animation seemed to be perfect for what I wanted to do. I needed it to continue rotating even if the progress stopped incrementing, so using this method allowed it to be completely independent of the state of `progress`.
 
 The `Spinner` component is a simple, stateless functional component. This is the primary re-usable component in this project. All of the demo functionality lives in `Demo.tsx`. All of the props are initialized to defaults. The configurable props are:
 
@@ -58,3 +58,6 @@ The `Demo` component contains all of the functionality to control the `Spinner` 
 
 ## Testing
 I would have liked to have spent more time on the tests, specifically those of the `Spinner` component. There are a few spots in the tests where I am testing for implementation-specific items, which are better suited for Enzyme over React-Testing-Library. To save time, I stuck with React-Testing-Library. The only other testing library I included was `react-test-renderer`, to generate JSON for Jest SnapShots.
+
+## Bugs
+One annoying bug that I failed to return to is in the `Demo` component's `Start` and `End` functionality. Clicking `End` during a timeout will move to the next increment of `progress`, and if the timeout happens to be long enough, it is quite noticable.
