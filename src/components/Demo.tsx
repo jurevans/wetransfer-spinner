@@ -27,7 +27,9 @@ const Demo: FC = (): ReactElement => {
     if (progress === 100) {
       setProgress(0);
     } else {
-      setProgress(progress + 1);
+      // Increment progress by a number between 1 and 5, with the result not
+      // exceeding 100:
+      setProgress(Math.min(progress + Math.floor(Math.random() * 5) + 1, 100));
     }
   }, [progress]);
 
@@ -40,7 +42,8 @@ const Demo: FC = (): ReactElement => {
         case 100:
           return 1000;
         default:
-          return 80;
+          // Multiply 80ms by a random number between 1 and 5
+          return (Math.floor(Math.random() * 5) + 1) * 80;
         }
       })();
       setTimeout(spin, duration)
@@ -58,7 +61,7 @@ const Demo: FC = (): ReactElement => {
 
   return (
     <div className='demo' style={styles}>
-      <Spinner progress={progress} animationDuration={0.75} rotationFactor={10} />
+      <Spinner progress={progress} transitionDuration={0.75} rotate={isSpinning} />
       {!isSpinning
         && <button onClick={handleStartSpinning}>Start</button>}
       {isSpinning

@@ -6,6 +6,7 @@ import App from './App';
 describe('App', () => {
   it('Renders the Demo component', () => {
     const { container } = render(<App />);
+    // This type of test would be better suited to Enzyme:
     expect(container.getElementsByClassName('demo').length).toBe(1);
   });
 

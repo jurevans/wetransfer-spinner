@@ -4,37 +4,44 @@ import './Spinner.css';
 
 type Props = {
   progress?: number;
-  animationDuration?: number;
+  transitionDuration?: number;
   size?: number | string;
   radius?: number,
   strokeWidth?: number,
   progressStyles?: CSSProperties,
-  rotationFactor?: number,
+  rotate?: boolean;
+  rotateDuration?: number,
 };
 
 const Spinner: FC<Props> = (props: Props): ReactElement => {
   const {
     progress = 0,
-    animationDuration = 1,
+    transitionDuration = 1,
     size = '100%',
     strokeWidth = 25,
     progressStyles = {},
-    rotationFactor = 1,
+    rotate = false,
+    rotateDuration = 2,
   } = props;
 
   const radius = 175;
   const diameter = Math.round(Math.PI * radius * 2);
 
   const progressStyle: CSSProperties = {
-    ...progressStyles,
     strokeDashoffset: getOffset(progress, diameter),
-    transition: `stroke-dashoffset ${animationDuration}s ease-out`,
+    transition: `stroke-dashoffset ${transitionDuration}s ease-out`,
+    transformOrigin: `${radius}px ${radius}px`,
+    animationDuration: `${rotateDuration}s`,
+    // Rotate progress bar when rotate is true, and progress is between 1 and 10
+    animationPlayState: (rotate && progress > 0 && progress < 100) ? 'running' : 'paused',
+    // Styles can be overridden
+    ...progressStyles,
   };
 
   const validPercentage = getValidPercentage(progress);
 
   return (
-    <svg width={size} height={size} viewBox='-25 -25 400 400'>
+    <svg className='progress-spinner' width={size} height={size} viewBox='-25 -25 400 400'>
       <circle
         className='progress-circle'
         cx={radius}
@@ -47,7 +54,7 @@ const Spinner: FC<Props> = (props: Props): ReactElement => {
         cx={radius}
         cy={radius}
         r={radius}
-        transform={`rotate(${validPercentage * rotationFactor} ${radius} ${radius})`}
+        transform={`rotate(-90 ${radius} ${radius})`}
         strokeWidth={strokeWidth}
         strokeDasharray='1100'
         strokeDashoffset='1100'

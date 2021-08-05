@@ -1,4 +1,4 @@
-import { getOffset, getValidPercentage } from './util';
+import { getOffset, getValidPercentage } from '.';
 
 describe('getOffset', () => {
   it('should return a valid offset', () => {

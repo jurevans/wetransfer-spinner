@@ -2,6 +2,7 @@
 
 exports[`Spinner Renders correctly 1`] = `
 <svg
+  className="progress-spinner"
   height="100%"
   viewBox="-25 -25 400 400"
   width="100%"
@@ -26,11 +27,14 @@ exports[`Spinner Renders correctly 1`] = `
     strokeWidth={25}
     style={
       Object {
+        "animationDuration": "2s",
+        "animationPlayState": "paused",
         "strokeDashoffset": 495,
+        "transformOrigin": "175px 175px",
         "transition": "stroke-dashoffset 1s ease-out",
       }
     }
-    transform="rotate(550 175 175)"
+    transform="rotate(-90 175 175)"
   />
   <text
     className="percentage"
