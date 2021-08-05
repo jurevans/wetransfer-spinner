@@ -32,8 +32,8 @@ const Spinner: FC<Props> = (props: Props): ReactElement => {
     transition: `stroke-dashoffset ${transitionDuration}s ease-out`,
     transformOrigin: `${radius}px ${radius}px`,
     animationDuration: `${rotateDuration}s`,
-    // Rotate progress bar when rotate is true, and progress is between 1 and 10
-    animationPlayState: (rotate && progress > 0 && progress < 100) ? 'running' : 'paused',
+    // Rotate progress bar when rotate is true, and progress is over zero
+    animationPlayState: (rotate && progress > 0) ? 'running' : 'paused',
     // Styles can be overridden
     ...progressStyles,
   };
