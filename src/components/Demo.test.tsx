@@ -1,8 +1,14 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 import Demo from './Demo';
 
 describe('Demo', () => {
+  it('Renders correctly', () => {
+    const tree = renderer.create(<Demo />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('Renders start button', () => {
     render(<Demo />);
     const startElement = screen.getByText(/start/i);

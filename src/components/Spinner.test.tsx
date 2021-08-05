@@ -1,8 +1,14 @@
 import React from 'react';
+import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
 import Spinner from './Spinner';
 
 describe('Spinner', () => {
+  it('Renders correctly', () => {
+    const tree = renderer.create(<Spinner progress={55} rotationFactor={10} />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should initialize at zero with no props provided', () => {
     const { container } = render(<Spinner />);
     expect(container.getElementsByClassName('percentage-value')[0].innerHTML).toBe('0');

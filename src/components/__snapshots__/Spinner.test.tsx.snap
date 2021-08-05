@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner Renders correctly 1`] = `
+<svg
+  height="100%"
+  viewBox="-25 -25 400 400"
+  width="100%"
+>
+  <circle
+    className="progress-circle"
+    cx={175}
+    cy={175}
+    fill="none"
+    r={175}
+    strokeWidth={25}
+  />
+  <circle
+    className="progress-bar"
+    cx={175}
+    cy={175}
+    fill="none"
+    r={175}
+    strokeDasharray="1100"
+    strokeDashoffset="1100"
+    strokeLinecap="round"
+    strokeWidth={25}
+    style={
+      Object {
+        "strokeDashoffset": 495,
+        "transition": "stroke-dashoffset 1s ease-out",
+      }
+    }
+    transform="rotate(550 175 175)"
+  />
+  <text
+    className="percentage"
+    dominantBaseline="central"
+    textAnchor="middle"
+    x={175}
+    y={175}
+  >
+    <tspan
+      className="percentage-value"
+    >
+      55
+    </tspan>
+    <tspan
+      className="percentage-sup"
+      dx={6}
+      dy={-14}
+    >
+      %
+    </tspan>
+  </text>
+</svg>
+`;
