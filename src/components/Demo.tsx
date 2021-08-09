@@ -1,5 +1,4 @@
 import {
-  CSSProperties,
   FC,
   ReactElement,
   useCallback,
@@ -7,13 +6,8 @@ import {
   useState,
 } from 'react';
 import Spinner from './Spinner';
-
-const styles: CSSProperties = {
-  width: 200,
-  height: 200,
-  margin: '0 auto',
-  textAlign: 'center',
-};
+import SVGCounter from './SVGCounter';
+import './Demo.css';
 
 const Demo: FC = (): ReactElement => {
   const [progress, setProgress] = useState(0);
@@ -46,7 +40,7 @@ const Demo: FC = (): ReactElement => {
           return (Math.floor(Math.random() * 5) + 1) * 80;
         }
       })();
-      setTimeout(spin, duration)
+      setTimeout(spin, duration);
     }
   }, [progress]);
 
@@ -59,13 +53,78 @@ const Demo: FC = (): ReactElement => {
     toggleIsSpinning();
   };
 
+  // Define radius for each demo spinner:
+  const radius1 = 175;
+  const radius2 = 125;
+  const radius3 = 115;
+  const radius4 = 300;
+
   return (
-    <div className='demo' style={styles}>
-      <Spinner progress={progress} transitionDuration={0.75} rotate={isSpinning} />
-      {!isSpinning
-        && <button onClick={handleStartSpinning}>Start</button>}
-      {isSpinning
-        && <button onClick={handleStopSpinning}>End</button>}
+    <div className='demo'>
+      <div className='demo-spinners'>
+        <Spinner
+          progress={progress}
+          transitionDuration={0.75}
+          rotate={isSpinning}
+          radius={radius1}
+          size='33%'
+        >
+          <SVGCounter
+            x={radius1}
+            y={radius1}
+            percentage={progress}
+          />
+        </Spinner>
+        <Spinner
+          progress={progress}
+          transitionDuration={0.50}
+          rotate={isSpinning}
+          rotateDuration={1.5}
+          radius={radius2}
+          size='33%'
+        >
+          <SVGCounter
+            x={radius2}
+            y={radius2}
+            percentage={progress}
+          />
+        </Spinner>
+        <Spinner
+          progress={progress}
+          transitionDuration={0.50}
+          rotate={isSpinning}
+          rotateDuration={1.25}
+          radius={radius3}
+          size='33%'
+          strokeWidth={40}
+          progressStyles={{ stroke: '#884499', strokeLinecap: 'unset' }}
+        >
+          <SVGCounter
+            x={radius3}
+            y={radius3}
+            percentage={progress}
+          />
+        </Spinner>
+        <Spinner
+          progress={progress}
+          transitionDuration={1.25}
+          rotate={isSpinning}
+          rotateDuration={4}
+          radius={radius4}
+          size={radius4}
+        >
+          <SVGCounter
+            x='47%'
+            y='47%'
+            percentage={progress}
+          />
+        </Spinner>
+      </div>
+      <div className='demo-buttons'>
+        {isSpinning
+          ? <button onClick={handleStopSpinning}>End</button>
+          : <button onClick={handleStartSpinning}>Start</button>}
+      </div>
     </div>
   );
 };

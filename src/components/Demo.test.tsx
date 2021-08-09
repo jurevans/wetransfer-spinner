@@ -45,6 +45,6 @@ describe('Demo', () => {
       }),
     );
     // This type of test would be better suited to Enzyme:
-    expect(container.getElementsByClassName('percentage-value')[0].innerHTML).not.toBe('0');
+    expect(container.getElementsByClassName('svg-counter-value')[0].innerHTML).not.toBe('0');
   });
 });

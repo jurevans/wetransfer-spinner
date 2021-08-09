@@ -1,0 +1,14 @@
+.demo {
+  margin: 0 auto;
+  text-align: center;
+  width: 600px;
+}
+
+.demo-spinners {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.demo-buttons {
+  margin: 20px 0;
+}
