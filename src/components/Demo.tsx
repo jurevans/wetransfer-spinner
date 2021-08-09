@@ -7,7 +7,10 @@ import {
 } from 'react';
 import Spinner from './Spinner';
 import SVGCounter from './SVGCounter';
+import withHTMLCounter from './withHTMLCounter';
 import './Demo.css';
+
+const SpinnerWithHTMLCounter = withHTMLCounter(Spinner);
 
 const Demo: FC = (): ReactElement => {
   const [progress, setProgress] = useState(0);
@@ -56,7 +59,7 @@ const Demo: FC = (): ReactElement => {
   // Define radius for each demo spinner:
   const radius1 = 175;
   const radius2 = 125;
-  const radius3 = 115;
+  const radius3 = 110;
   const radius4 = 300;
 
   return (
@@ -119,6 +122,10 @@ const Demo: FC = (): ReactElement => {
             percentage={progress}
           />
         </Spinner>
+        <SpinnerWithHTMLCounter
+          progress={progress}
+          rotate={isSpinning}
+        />
       </div>
       <div className='demo-buttons'>
         {isSpinning
