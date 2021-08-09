@@ -37,4 +37,4 @@ export const calculateDiameter = (radius: number): number => {
 export const getViewBoxForCircle = (radius: number, strokeWidth: number): string => {
   const size = (radius * 2) + (strokeWidth * 2);
   return `${-strokeWidth} ${-strokeWidth} ${size} ${size}`;
-}
+};

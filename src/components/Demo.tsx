@@ -15,6 +15,7 @@ const SpinnerWithHTMLCounter = withHTMLCounter(Spinner);
 const Demo: FC = (): ReactElement => {
   const [progress, setProgress] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
+  const [timeoutId, setTimeoutId] = useState(0);
 
   const toggleIsSpinning = () => {
     setIsSpinning(!isSpinning);
@@ -34,16 +35,17 @@ const Demo: FC = (): ReactElement => {
     if (isSpinning) {
       const duration = (() => {
         switch(progress) {
-        case 0:
-          return 1500;
-        case 100:
-          return 1000;
-        default:
-          // Multiply 80ms by a random number between 1 and 5
-          return (Math.floor(Math.random() * 5) + 1) * 80;
+          case 0:
+            return 1500;
+          case 100:
+            return 1000;
+          default:
+            // Multiply 80ms by a random number between 1 and 5
+            return (Math.floor(Math.random() * 5) + 1) * 80;
         }
       })();
-      setTimeout(spin, duration);
+      const id: number = window.setTimeout(spin, duration);
+      setTimeoutId(id);
     }
   }, [progress]);
 
@@ -53,6 +55,7 @@ const Demo: FC = (): ReactElement => {
   };
 
   const handleStopSpinning = () => {
+    clearTimeout(timeoutId)
     toggleIsSpinning();
   };
 
