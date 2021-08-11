@@ -49,6 +49,7 @@ const Demo: FC = (): ReactElement => {
       const id: number = window.setTimeout(spin, duration);
       setTimeoutId(id);
     }
+    return () => clearTimeout(timeoutId);
   }, [progress]);
 
   const handleStartSpinning = () => {
