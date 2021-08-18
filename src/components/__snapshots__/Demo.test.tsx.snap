@@ -3,75 +3,278 @@
 exports[`Demo Renders correctly 1`] = `
 <div
   className="demo"
-  style={
-    Object {
-      "height": 200,
-      "margin": "0 auto",
-      "textAlign": "center",
-      "width": 200,
-    }
-  }
 >
-  <svg
-    className="progress-spinner"
-    height="100%"
-    viewBox="-25 -25 400 400"
-    width="100%"
+  <div
+    className="demo-spinners"
   >
-    <circle
-      className="progress-circle"
-      cx={175}
-      cy={175}
-      fill="none"
-      r={175}
-      strokeWidth={25}
-    />
-    <circle
-      className="progress-bar"
-      cx={175}
-      cy={175}
-      fill="none"
-      r={175}
-      strokeDasharray="1100"
-      strokeDashoffset="1100"
-      strokeLinecap="round"
-      strokeWidth={25}
-      style={
-        Object {
-          "animationDuration": "2s",
-          "animationPlayState": "paused",
-          "strokeDashoffset": 1100,
-          "transformOrigin": "175px 175px",
-          "transition": "stroke-dashoffset 0.75s ease-out",
-        }
-      }
-      transform="rotate(-90 175 175)"
-    />
-    <text
-      className="percentage"
-      dominantBaseline="central"
-      textAnchor="middle"
-      x={175}
-      y={175}
+    <svg
+      className="progress-spinner"
+      height="33%"
+      viewBox="-25 -25 400 400"
+      width="33%"
     >
-      <tspan
-        className="percentage-value"
+      <circle
+        className="progress-circle"
+        cx={175}
+        cy={175}
+        r={175}
+        strokeWidth={25}
+      />
+      <circle
+        className="progress-bar"
+        cx={175}
+        cy={175}
+        r={175}
+        strokeDasharray={1100}
+        strokeWidth={25}
+        style={
+          Object {
+            "animationDuration": "2s",
+            "animationPlayState": "paused",
+            "strokeDashoffset": 1100,
+            "transformOrigin": "175px 175px",
+            "transition": "stroke-dashoffset 0.75s ease-out",
+          }
+        }
+      />
+      <text
+        className="svg-counter"
+        dominantBaseline="central"
+        textAnchor="middle"
+        x={175}
+        y={175}
       >
-        0
-      </tspan>
-      <tspan
-        className="percentage-sup"
-        dx={6}
-        dy={-14}
+        <tspan
+          className="svg-counter-value"
+        >
+          0
+        </tspan>
+        <tspan
+          className="svg-counter-sup"
+          dx={6}
+          dy={-14}
+        >
+          %
+        </tspan>
+      </text>
+    </svg>
+    <svg
+      className="progress-spinner"
+      height="33%"
+      viewBox="-25 -25 300 300"
+      width="33%"
+    >
+      <circle
+        className="progress-circle"
+        cx={125}
+        cy={125}
+        r={125}
+        strokeWidth={25}
+      />
+      <circle
+        className="progress-bar"
+        cx={125}
+        cy={125}
+        r={125}
+        strokeDasharray={785}
+        strokeWidth={25}
+        style={
+          Object {
+            "animationDuration": "1.5s",
+            "animationPlayState": "paused",
+            "strokeDashoffset": 785,
+            "transformOrigin": "125px 125px",
+            "transition": "stroke-dashoffset 0.5s ease-out",
+          }
+        }
+      />
+      <text
+        className="svg-counter"
+        dominantBaseline="central"
+        textAnchor="middle"
+        x={125}
+        y={125}
       >
-        %
-      </tspan>
-    </text>
-  </svg>
-  <button
-    onClick={[Function]}
+        <tspan
+          className="svg-counter-value"
+        >
+          0
+        </tspan>
+        <tspan
+          className="svg-counter-sup"
+          dx={6}
+          dy={-14}
+        >
+          %
+        </tspan>
+      </text>
+    </svg>
+    <svg
+      className="progress-spinner"
+      height="33%"
+      viewBox="-40 -40 300 300"
+      width="33%"
+    >
+      <circle
+        className="progress-circle"
+        cx={110}
+        cy={110}
+        r={110}
+        strokeWidth={40}
+      />
+      <circle
+        className="progress-bar"
+        cx={110}
+        cy={110}
+        r={110}
+        strokeDasharray={691}
+        strokeWidth={40}
+        style={
+          Object {
+            "animationDuration": "1.25s",
+            "animationPlayState": "paused",
+            "stroke": "#884499",
+            "strokeDashoffset": 691,
+            "strokeLinecap": "unset",
+            "transformOrigin": "110px 110px",
+            "transition": "stroke-dashoffset 0.5s ease-out",
+          }
+        }
+      />
+      <text
+        className="svg-counter"
+        dominantBaseline="central"
+        textAnchor="middle"
+        x={110}
+        y={110}
+      >
+        <tspan
+          className="svg-counter-value"
+        >
+          0
+        </tspan>
+        <tspan
+          className="svg-counter-sup"
+          dx={6}
+          dy={-14}
+        >
+          %
+        </tspan>
+      </text>
+    </svg>
+    <svg
+      className="progress-spinner"
+      height={300}
+      viewBox="-25 -25 650 650"
+      width={300}
+    >
+      <circle
+        className="progress-circle"
+        cx={300}
+        cy={300}
+        r={300}
+        strokeWidth={25}
+      />
+      <circle
+        className="progress-bar"
+        cx={300}
+        cy={300}
+        r={300}
+        strokeDasharray={1885}
+        strokeWidth={25}
+        style={
+          Object {
+            "animationDuration": "4s",
+            "animationPlayState": "paused",
+            "strokeDashoffset": 1885,
+            "transformOrigin": "300px 300px",
+            "transition": "stroke-dashoffset 1.25s ease-out",
+          }
+        }
+      />
+      <text
+        className="svg-counter"
+        dominantBaseline="central"
+        textAnchor="middle"
+        x="47%"
+        y="47%"
+      >
+        <tspan
+          className="svg-counter-value"
+        >
+          0
+        </tspan>
+        <tspan
+          className="svg-counter-sup"
+          dx={6}
+          dy={-14}
+        >
+          %
+        </tspan>
+      </text>
+    </svg>
+    <div
+      className="html-spinner-container"
+    >
+      <svg
+        className="progress-spinner"
+        height="100%"
+        viewBox="-25 -25 400 400"
+        width="100%"
+      >
+        <circle
+          className="progress-circle"
+          cx={175}
+          cy={175}
+          r={175}
+          strokeWidth={25}
+        />
+        <circle
+          className="progress-bar"
+          cx={175}
+          cy={175}
+          r={175}
+          strokeDasharray={1100}
+          strokeWidth={25}
+          style={
+            Object {
+              "animationDuration": "2s",
+              "animationPlayState": "paused",
+              "strokeDashoffset": 1100,
+              "transformOrigin": "175px 175px",
+              "transition": "stroke-dashoffset 1s ease-out",
+            }
+          }
+        />
+      </svg>
+      <div
+        className="html-counter"
+      >
+        <span
+          className="html-counter-value"
+        >
+          <span
+            className="html-counter-percentage"
+          >
+            0
+          </span>
+          <span
+            className="html-counter-sup"
+          >
+            %
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="demo-buttons"
   >
-    Start
-  </button>
+    <button
+      onClick={[Function]}
+    >
+      Start
+    </button>
+  </div>
 </div>
 `;

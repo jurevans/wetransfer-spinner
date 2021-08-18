@@ -11,7 +11,6 @@ exports[`Spinner Renders correctly 1`] = `
     className="progress-circle"
     cx={175}
     cy={175}
-    fill="none"
     r={175}
     strokeWidth={25}
   />
@@ -19,11 +18,8 @@ exports[`Spinner Renders correctly 1`] = `
     className="progress-bar"
     cx={175}
     cy={175}
-    fill="none"
     r={175}
-    strokeDasharray="1100"
-    strokeDashoffset="1100"
-    strokeLinecap="round"
+    strokeDasharray={1100}
     strokeWidth={25}
     style={
       Object {
@@ -34,27 +30,6 @@ exports[`Spinner Renders correctly 1`] = `
         "transition": "stroke-dashoffset 1s ease-out",
       }
     }
-    transform="rotate(-90 175 175)"
   />
-  <text
-    className="percentage"
-    dominantBaseline="central"
-    textAnchor="middle"
-    x={175}
-    y={175}
-  >
-    <tspan
-      className="percentage-value"
-    >
-      55
-    </tspan>
-    <tspan
-      className="percentage-sup"
-      dx={6}
-      dy={-14}
-    >
-      %
-    </tspan>
-  </text>
 </svg>
 `;

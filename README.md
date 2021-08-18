@@ -2,7 +2,9 @@
 
 This is my implementation of the WeTransfer file-upload progress spinner. For this project, I chose to begin with `create-react-app` to get it up and running quickly, using the `typescript` template. I created CSS where necessary, but in general it is pretty minimal, as I focused on the Spinner functionality.
 
-View the [live demo](https://thirsty-archimedes-1aaf76.netlify.app/).
+View the updated [live demo](https://thirsty-swanson-cbfc31.netlify.app/).
+
+View the original [live demo](https://thirsty-archimedes-1aaf76.netlify.app/).
 
 ## Usage
 

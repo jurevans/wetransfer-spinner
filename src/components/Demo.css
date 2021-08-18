@@ -1,0 +1,22 @@
+.demo {
+  margin: 0 auto;
+  text-align: center;
+  width: 600px;
+}
+
+.demo-spinners {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.demo-buttons {
+  margin: 20px 0;
+}
+
+.html-spinner-container {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
